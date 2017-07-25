@@ -9,8 +9,14 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloWorldController {
 
     @RequestMapping("/hello")
-    public String index(){
+    public String hello(){
         System.out.println("进入controller");
         return "hello world!";
+    }
+
+    @RequestMapping("/index")
+    public String index(){
+        System.out.println("进入首页");
+        return "欢迎进入首页！";
     }
 }
