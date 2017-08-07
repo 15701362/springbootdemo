@@ -21,6 +21,6 @@ public class SpringbootApplication implements EmbeddedServletContainerCustomizer
 
 	@Override
 	public void customize(ConfigurableEmbeddedServletContainer configurableEmbeddedServletContainer) {
-		configurableEmbeddedServletContainer.setPort(8081);
+		configurableEmbeddedServletContainer.setPort(8082);
 	}
 }

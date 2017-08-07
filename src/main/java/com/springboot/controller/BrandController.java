@@ -26,7 +26,7 @@ public class BrandController {
 
     @RequestMapping("/{id}")
     public Brand view(@PathVariable("id") Long id){
-       logger.info(id.toString());
+       logger.info("============"+id.toString());
        Brand brand = brandService.selectByPrimaryKey(id);
         return brand;
     }
