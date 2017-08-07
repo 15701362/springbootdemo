@@ -26,20 +26,8 @@ public class BrandController {
 
     @RequestMapping("/{id}")
     public Brand view(@PathVariable("id") Long id){
-       logger.info("============"+id.toString());
        Brand brand = brandService.selectByPrimaryKey(id);
         return brand;
     }
 
-    //测试restfull风格api，多个参数的接收
-    @RequestMapping("/test/{id}/{name}")
-    public Brand test(@PathVariable("id") Long id,@PathVariable("name") String name){
-//        Brand brand = brandService.selectByPrimaryKey(1L);
-        Brand brand2 = new Brand();
-        brand2.setId(id);
-        brand2.setCreatedate(new Date());
-        brand2.setModifydate(new Date());
-        brand2.setName(name);
-        return brand2;
-    }
 }

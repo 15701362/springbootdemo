@@ -13,14 +13,14 @@ import org.springframework.context.annotation.ComponentScan;
 // listener之类的需要单独进行注册才能使用，spring boot里面提供了该注解起到注册作用
 @ServletComponentScan
 @MapperScan(basePackages = "com.springboot.dao")
-public class SpringbootApplication implements EmbeddedServletContainerCustomizer {
+public class SpringbootApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringbootApplication.class, args);
 	}
 
-	@Override
-	public void customize(ConfigurableEmbeddedServletContainer configurableEmbeddedServletContainer) {
-		configurableEmbeddedServletContainer.setPort(8082);
-	}
+//	@Override
+//	public void customize(ConfigurableEmbeddedServletContainer configurableEmbeddedServletContainer) {
+//		configurableEmbeddedServletContainer.setPort(8082);
+//	}
 }
