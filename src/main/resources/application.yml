@@ -11,4 +11,4 @@ spring:
     password: admin
     in-memory: true
     pool:
-      enabled: false
+      enabled: true

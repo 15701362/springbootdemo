@@ -1,7 +1,7 @@
 package com.springboot.jms;
 
 import com.google.gson.Gson;
-import com.springboot.entity.Brand;
+import com.springboot.domain.Brand;
 import com.springboot.service.BrandService;
 import org.apache.activemq.command.ActiveMQQueue;
 import org.junit.Test;
@@ -38,13 +38,5 @@ public class SpringbootJmsApplicationTests {
         producer.sendMessage(destination, gson.toJson(brand));
     }
 
-    @Test
-    public void loadBrand2() throws InterruptedException {
-        Destination destination = new ActiveMQQueue("mytest.queue");
-        Brand brand = brandService.selectByPrimaryKey(1L);
-
-        Gson gson = new Gson();
-        System.out.println("========================>>>"+gson.toJson(brand));
-    }
 
 }
