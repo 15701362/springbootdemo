@@ -7,7 +7,7 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 
 @SpringBootApplication
 @ServletComponentScan
-@MapperScan(basePackages = "com.springboot.dao")
+@MapperScan(basePackages = "com.springboot.mapper")
 public class SpringbootApplication {
 
 	public static void main(String[] args) {
