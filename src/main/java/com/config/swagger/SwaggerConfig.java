@@ -41,7 +41,7 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("springBoot+myBatis+Swagger整合Demo")//大标题
+                .title("商品管理Api")//大标题
                 .version("1.0")//版本
                 .build();
     }
