@@ -1,7 +1,6 @@
 package com.config.swagger;
 
 import com.google.common.base.Predicate;
-import org.springframework.boot.autoconfigure.web.BasicErrorController;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -22,8 +21,6 @@ public class SwaggerConfig {
             @Override
             public boolean apply(RequestHandler input) {
                 Class<?> declaringClass = input.declaringClass();
-                if (declaringClass == BasicErrorController.class)// 排除
-                    return false;
                 if(declaringClass.isAnnotationPresent(RestController.class)) // 被注解的类
                     return true;
                 if(input.isAnnotatedWith(ResponseBody.class)) // 被注解的方法

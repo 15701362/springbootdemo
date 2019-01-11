@@ -4,7 +4,6 @@ import com.alibaba.druid.pool.DruidDataSource;
 import lombok.Data;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,9 +12,9 @@ import org.springframework.context.annotation.Primary;
 import javax.sql.DataSource;
 import java.sql.SQLException;
 
-@ConfigurationProperties(prefix = "druid.datasource")
-@Configuration
 @Data
+@Configuration
+@ConfigurationProperties(prefix = "druid.datasource")
 public class DruidDBConfig {
     private static final Logger LOGGER = LoggerFactory.getLogger(DruidDBConfig.class);
 
@@ -30,8 +29,6 @@ public class DruidDBConfig {
     private int initialSize;
 
     private int minIdle;
-
-    private int maxActive;
 
     private int maxWait;
 
@@ -68,7 +65,6 @@ public class DruidDBConfig {
         //configuration
         datasource.setInitialSize(initialSize);
         datasource.setMinIdle(minIdle);
-        datasource.setMaxActive(maxActive);
         datasource.setMaxWait(maxWait);
         datasource.setTimeBetweenEvictionRunsMillis(timeBetweenEvictionRunsMillis);
         datasource.setMinEvictableIdleTimeMillis(minEvictableIdleTimeMillis);
